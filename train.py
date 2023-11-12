@@ -2,7 +2,6 @@ import torch
 from pytorch_lightning import Trainer, seed_everything
 from lightning.pytorch.loggers.neptune import NeptuneLogger
 import os
-import sys
 import argparse
 from dotenv import load_dotenv
 from GLUEDataModule import GLUEDataModule
@@ -50,6 +49,11 @@ model = GLUETransformer(
     num_labels=dm.num_labels,
     eval_splits=dm.eval_splits,
     task_name=dm.task_name,
+    learning_rate=args.lr,
+    adam_epsilon=args.adam_epsilon,
+    weight_decay=args.weight_decay,
+    train_batch_size=args.train_batch_size,
+    eval_batch_size=args.eval_batch_size
 )
 
 # Create NeptuneLogger instance

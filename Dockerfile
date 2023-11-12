@@ -12,4 +12,4 @@ COPY train.py .
 COPY GLUEDataModule.py .
 COPY GLUETransformer.py .
 
-CMD ["python", "train.py"]
+CMD ["python", "train.py", "--train_batch_size", "4"],
