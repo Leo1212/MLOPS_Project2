@@ -11,7 +11,7 @@ from GLUETransformer import GLUETransformer
 load_dotenv()
 
 
-# Setup Naeptune
+# Setup Neptune
 my_api_token = os.getenv('NEPTUNE_API_TOKEN')
 my_project = os.getenv('NEPTUNE_PROJECT')
 
